@@ -1,0 +1,35 @@
+<div class="container">
+  <mat-icon mat-dialog-close class="close-button">
+    close
+  </mat-icon>
+
+  <h1 color="primary">Termo</h1>
+
+  <div class="term-details">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam arcu ligula, cursus in nunc non, bibendum fermentum enim. Maecenas et mi sem. Etiam vulputate metus urna, sodales iaculis magna mattis ac. Aliquam erat volutpat. Praesent sed sollicitudin nibh. Phasellus ut venenatis lacus. Nulla facilisi. Aenean porttitor vitae nunc sed accumsan. Integer vulputate diam nisi. Aliquam sed imperdiet velit. 
+    </p>
+  </div>
+
+  <svg width="400" height="4" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <line stroke-dasharray="10, 5" x1="0" y1="1" x2="400" y2="1" style="stroke-width: 2px;"></line>
+  </svg>
+
+  <mat-checkbox
+    class="checkbox"
+    [(ngModel)]="accepted"
+    color="primary"
+  >
+    Li e aceito os termos e condições acima
+  </mat-checkbox>
+
+  <button
+    mat-flat-button
+    color="accent"
+    [disabled]="!accepted"
+    mat-dialog-close
+    (click)="confirm()"
+  >
+    Ok, Entendi
+  </button>
+</div>

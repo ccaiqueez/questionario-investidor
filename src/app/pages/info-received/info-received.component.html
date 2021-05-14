@@ -1,0 +1,28 @@
+<div class="container full">
+  <img src="assets/images/form.png" alt="Formulário preenchido">
+  <span>Informações recebidas!</span>
+  
+  <p>Em até 48h daremos um retorno sobre a abertura de sua conta.</p>
+
+  <p>Para receber nossas recomendações de investimentos e começar a investir, precisamos conhecer sue perfil de investidor.</p>
+
+  <p>São apenas 4 perguntas, que irão guiar todas as suas decisões de investimentos.</p>
+
+  <p class="space-top">Gostaria de responder ao Perfil do investidor?</p>
+  <div>
+    <button
+      mat-stroked-button
+      color="primary"
+      (click)="openDialog()"
+    >
+      Não
+    </button>
+    <button
+      mat-stroked-button
+      color="primary"
+      [routerLink]="['/profile-questionnaire']" 
+    >
+      Sim
+    </button>
+  </div>
+</div>

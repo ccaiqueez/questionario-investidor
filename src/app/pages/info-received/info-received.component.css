@@ -1,0 +1,29 @@
+.container {
+  max-width: 800px;
+  margin: 5em auto;
+}
+
+img {
+  max-height: 100px;
+  margin-bottom: 1em;
+}
+
+span {  
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #c8bb90;
+  margin-bottom: 1em;
+}
+
+p {
+  max-width: 600px;
+  text-align: center;
+}
+
+.options p {
+  margin-top: 2.2em;
+}
+
+button {
+  margin: .2em;
+}
