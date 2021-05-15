@@ -1,0 +1,85 @@
+<div class="container">
+  <h1>PERFIL DO INVESTIDOR - QUESTIONÁRIO</h1>
+
+  <form [formGroup]="questionaireForm"  *ngIf="questionaireForm; else spinnerContainer">
+    <div *ngFor="let question of dynamicQuestions; let i = index" class="item-question" >
+      
+      <span class="question">
+        {{ i + 1 }} - {{ question.question }}
+      </span>
+
+      <mat-radio-group class="dynamic-input" [formControlName]="question.field">
+        <mat-radio-button
+          *ngFor="let option of question.options; let i = index"
+          class="radio-option"
+          color="primary"
+          [value]="i"
+          [ngStyle]="{'flex-basis': 'calc(100% / '+ question.options.length + ')'}">
+          {{ option }}
+        </mat-radio-button>
+      </mat-radio-group>
+
+      <div class="separator"></div>
+    </div>
+
+    <div class="item-question">
+      <span class="question">
+        {{ dynamicQuestions.length + 1 }} - Qual sua familiaridade com os tipos de investimentos abaixo?<br>
+        Leve em consideração o valor aplicado nos últimos 2 anos.
+      </span>
+
+      <div class="fixed-inputs" formGroupName="investmentsTypes">
+        <mat-form-field appearance="standard" *ngFor="let question of investmentsTypesQuestions">
+          <mat-label>{{ question.question }}</mat-label>
+          <mat-select (openedChange)="loadSelectOptions()" [formControlName]="question.field" >
+            <mat-option> {{ selectOptions ? '-' : 'Carregando...'}} </mat-option>
+            <mat-option *ngFor="let option of selectOptions; let i = index" [value]="i">
+              {{ option }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button mat-stroked-button color="primary" [routerLink]="['/']">
+        Voltar
+      </button>
+
+      <button mat-flat-button color="accent" [disabled]="questionaireForm.invalid" (click)="submit()">
+        Salvar
+      </button>
+    </div>
+  </form>
+
+  <ng-template #spinnerContainer>
+    <div class="spinner-container">
+      <mat-spinner [diameter]="80"></mat-spinner>
+    </div>
+  </ng-template>
+</div>
+
+<ng-template #registerSaved>
+  <app-dialog-successful-registration>
+    <div class="register-saved">
+      <div class="dynamic-questions">
+        <div *ngFor="let question of dynamicQuestions" class="register-saved-question-container">
+          <span class="question-text">
+            {{ question.question }}
+          </span>
+          <span class="selected-question">
+            {{ getDynamicQuestionSelected(question.field) }}
+          </span>
+        </div>
+        <div class="register-saved-question-container" *ngFor="let question of investmentsTypesQuestions">
+          <span class="question-text">
+            {{ question.question }}
+          </span>
+          <span class="selected-question">
+            {{ getInvestmentTypeSelected(question.field) }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </app-dialog-successful-registration>
+</ng-template>

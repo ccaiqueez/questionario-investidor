@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
-import { DiSuccessfulRegistrationComponent } from '../di-successful-registration/di-successful-registration.component';
+import { DialogSuccessfulRegistrationComponent } from 'src/app/components/dialog-successful-registration/dialog-successful-registration.component';
 
 @Component({
   selector: 'app-dialog-term-accept',
@@ -14,7 +14,7 @@ export class DialogTermAcceptComponent {
   constructor(private dialog: MatDialog) { }
 
   confirm() {
-    this.dialog.open(DiSuccessfulRegistrationComponent, {
+    this.dialog.open(DialogSuccessfulRegistrationComponent, {
       disableClose: true
     });
   }

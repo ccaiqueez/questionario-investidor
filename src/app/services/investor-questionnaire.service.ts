@@ -6,7 +6,7 @@ import IDynamicQuestion from 'src/app/interfaces/IDynamicQuestion';
 @Injectable({
   providedIn: 'root'
 })
-export class ProfileQuestioraireService {
+export class InvestorQuestionnaireService {
   private URL = 'https://my-json-server.typicode.com/ccaiqueez/questionario-service';
 
   constructor(private http: HttpClient) { }

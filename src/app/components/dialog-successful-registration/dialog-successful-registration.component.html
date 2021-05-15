@@ -1,0 +1,13 @@
+<div class="container">
+  <mat-icon mat-dialog-close class="close-button">
+    close
+  </mat-icon>
+  
+  <h1>Cadastro realizado com sucesso!</h1>
+
+  <ng-content select=".register-saved"></ng-content>
+  
+  <button mat-stroked-button color="primary" [routerLink]="['/']">
+  Voltar à tela inicial
+  </button>
+</div>

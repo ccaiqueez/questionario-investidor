@@ -3,6 +3,13 @@
   box-sizing: border-box;
 }
 
+
+body {
+  margin: 0;  
+  color: #7c7c7c;
+  font-size: 15px;
+}
+
 html, body { 
   height: 100%; 
 }
@@ -14,25 +21,7 @@ body {
 }
 
 :root {
-  /*--primary-color: #673ab7;*/
   --primary-color: #973c5c
-}
-
-body {
-  margin: 0;  
-  color: #7c7c7c;
-  font-size: 15px;
-}
-
-.mat-flat-button,
-.mat-stroked-button {
-  padding: .2em 4em !important;
-
-}
-
-.mat-flat-button[color="accent"] {
-  color: #fff !important;
-  background-color: #fabd0f;
 }
 
 .container {
@@ -42,13 +31,26 @@ body {
   flex-direction: column;
 }
 
-.mat-radio-button {
-  .mat-radio-label-content {
-    max-width: 200px;
-    white-space: normal;
-  }
+.mat-flat-button,
+.mat-stroked-button {
+  padding: .2em 4em !important;
+}
 
-  &.mat-radio-checked .mat-radio-label-content {
-    color: var(--primary-color);
-  }
+.mat-flat-button[color="accent"] {
+  color: #ffffff;
+  background-color: #fabd0f;
+}
+
+
+.mat-radio-button,
+.mat-radio-label-content {
+  max-width: 300px;
+  white-space: normal; 
+}
+
+.separator {
+  margin-bottom: 1em;
+  border: dashed 1px #c4c4c4;  
+  display: inline-block;
+  width: 900px;
 }
