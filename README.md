@@ -23,3 +23,5 @@ O sistema utiliza a ferramenta [My JSON Server](https://my-json-server.typicode.
 ![termo](https://user-images.githubusercontent.com/32864617/118342303-27a65280-b4f9-11eb-9e55-d7ef2789d276.png)
 
 ![questionario](https://user-images.githubusercontent.com/32864617/118342311-2f65f700-b4f9-11eb-820b-62d9c13a8301.png)
+
+![cadastro-finalizado](https://user-images.githubusercontent.com/32864617/118342452-d6e32980-b4f9-11eb-823d-f825e43e7b07.png)
