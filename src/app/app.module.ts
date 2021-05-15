@@ -17,6 +17,7 @@ import { InfoReceivedComponent } from './pages/info-received/info-received.compo
 import { DialogTermAcceptComponent } from './components/dialog-term-accept/dialog-term-accept.component';
 import { InvestorQuestionnaireComponent } from './pages/investor-questionnaire/investor-questionnaire.component';
 import { DialogSuccessfulRegistrationComponent } from './components/dialog-successful-registration/dialog-successful-registration.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DialogSuccessfulRegistrationComponent } from './components/dialog-succe
     InfoReceivedComponent,
     DialogTermAcceptComponent,
     InvestorQuestionnaireComponent,
-    DialogSuccessfulRegistrationComponent
+    DialogSuccessfulRegistrationComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

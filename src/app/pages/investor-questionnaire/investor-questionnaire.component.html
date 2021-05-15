@@ -1,7 +1,9 @@
 <div class="container">
+  <app-spinner spinnerContainer [loading]="loading"></app-spinner>
+
   <h1>PERFIL DO INVESTIDOR - QUESTIONÁRIO</h1>
 
-  <form [formGroup]="questionaireForm"  *ngIf="questionaireForm; else spinnerContainer">
+  <form [formGroup]="questionnaireForm"  *ngIf="questionnaireForm; else spinnerContainer">
     <div *ngFor="let question of dynamicQuestions; let i = index" class="item-question" >
       
       <span class="question">
@@ -46,7 +48,7 @@
         Voltar
       </button>
 
-      <button mat-flat-button color="accent" [disabled]="questionaireForm.invalid" (click)="submit()">
+      <button mat-flat-button color="accent" [disabled]="questionnaireForm.invalid" (click)="submit()">
         Salvar
       </button>
     </div>

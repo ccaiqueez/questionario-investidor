@@ -13,7 +13,8 @@ import IDynamicQuestion from 'src/app/interfaces/IDynamicQuestion';
 export class InvestorQuestionnaireComponent implements OnInit {
   @ViewChild('registerSaved') successTemplateRef: TemplateRef<any>;
 
-  public questionaireForm: FormGroup;
+  public loading: boolean
+  public questionnaireForm: FormGroup;
   public dynamicQuestions: Array<IDynamicQuestion>;
   public investmentsTypesQuestions: Array<any>;
   public selectOptions: Array<String>;
@@ -56,8 +57,12 @@ export class InvestorQuestionnaireComponent implements OnInit {
       dynamicQuestions[question.field] = [null, Validators.required]
     });
 
-    this.questionaireForm = this.fb.group(dynamicQuestions);
-    this.questionaireForm.addControl('investmentsTypes', this.getInvestmentsTypesForm());
+    this.questionnaireForm = this.fb.group(dynamicQuestions);
+    this.questionnaireForm.addControl('investmentsTypes', this.getInvestmentsTypesForm());
+
+    if(this.dynamicQuestions){
+      this.loading = false
+    }   
   }
 
   getInvestmentsTypesForm() {
@@ -76,14 +81,14 @@ export class InvestorQuestionnaireComponent implements OnInit {
   }
 
   getDynamicQuestionSelected(controlName: string): String {
-    const answerOptionIndex = this.questionaireForm.value[controlName];
+    const answerOptionIndex = this.questionnaireForm.value[controlName];
     const questionData = this.dynamicQuestions.find(result => result.field === controlName);
 
     return questionData.options[answerOptionIndex];
   }
 
   getInvestmentTypeSelected(controlName: string): String {
-    const formGroupValue = this.questionaireForm.value['investmentsTypes'];
+    const formGroupValue = this.questionnaireForm.value['investmentsTypes'];
     const answerOptionIndex = formGroupValue[controlName];
     return this.selectOptions[answerOptionIndex];
   }
